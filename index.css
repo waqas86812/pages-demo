@@ -1,0 +1,45 @@
+.add {
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #000;
+    box-sizing: border-box;
+}
+
+input {
+    width: 98%;
+    height: 30px;
+}
+
+.list {
+    padding-top: 20px;
+}
+
+.item {
+    width: 100%;
+    border-bottom: 1p solid #000;
+    /margin-bottom: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add {
+    background-color: black;
+    margin-top: 20px;
+    color: #fff;
+    border: 0;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 15px;
+}
+
+.remove {
+    background-color: rgb(212, 101, 101);
+    margin-top: 20px;
+    color: #fff;
+    border: 0;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 15px;
+}
