@@ -1,32 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./index.css">
-    <title>祈祈備忘錄</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif; font-size: 25px;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
 </head>
 <body>
-    <div style="border: 3px rgb(26, 75, 83) solid;" class="app">
-        <h1>備忘錄</h1>
-        <p>記事</p>
-        <input type="text" id="content" placeholder="輸入文字">
-        <p>日期</p>
-        <input type="date" id="date">
-        <p>時間</p>
-        <input type="time" id="time">
-        <button class="add" id="addedBtn">新增</button>
-        <button class="remove" id="removeBtn">移除最後一項</button>
-        <div class="list" id="list">
-            <!--<div class="item">
-                <div>
-                    <p>內容 :</p>
-                    <p>時間 :</p>
-                </div>
-            </div> -->
-        </div>
-    </div>
-    <script src="./index.js"></script>
+
+<h3>Contact Form</h3>
+
+<div class="container">
+  <form action="#" method="post" name="google">
+    <label for="fname">名字 :</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+    <label for="lname">姓氏 :</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+    <label for="country">國家 :</label>
+    <select id="country" name="country">
+      <option value="taiwn">Taiwan</option>
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select>
+
+    <label for="subject">說明 :</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+    <input type="submit" value="新增" name="submit">
+  </form>
+</div>
+  <script type="text/javascript">
+      const scriptURL='https://script.google.com/macros/s/AKfycbxwmgvIh1wt8PnrAKWCTPV9TGYGc9AjPpdiI5uIMIUaHsopwfJpyw2-f6Vp80E-oi-L/exec'
+
+      const form = document.forms['google']
+          form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+              .then(response => alert("You have successfully added."))
+              .catch(error => console.error('Error!', error.message))
+          })
+  </script>
 </body>
 </html>
